@@ -2,12 +2,15 @@ public class Player {
     private String name;
     private int score;
     private int playerWinBalls;
-    private int[] points = {0,10,15,30,40};
-
+    private int[] points = {0,15,30,40};
     public Player(String name){
         this.name = name;
         this.score = points[0];
         this.playerWinBalls = 0;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getPlayerWinBalls() {
@@ -24,7 +27,9 @@ public class Player {
     }
 
     public void setScore(int score) {
-        this.score = getPoints()[score];
+        if(getPlayerWinBalls() <= 3) {
+            this.score = getPoints()[score];
+        }
     }
 
     public int[] getPoints() {
@@ -34,6 +39,5 @@ public class Player {
     public void setPoints(int[] points) {
         this.points = points;
     }
-
 
 }
