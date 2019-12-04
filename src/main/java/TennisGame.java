@@ -1,10 +1,15 @@
 public class TennisGame {
+    Player playerOne;
+    Player playerTwo;
+    String pointsArray[] = {"love", "fifteen", "thirty", "forty"};
     public TennisGame(String playerOneName, String playerTwoName){
-        Player playerOne = new Player(playerOneName);
-        Player playerTwo = new Player(playerTwoName);
+        playerOne = new Player(playerOneName);
+        playerTwo = new Player(playerTwoName);
     }
 
-    public void PlayerMakesScore(Player player){
-        player.setScore(player.getScore()+1);
+    public void playerWinBalls(Player player){
+        player.setPlayerWinBalls(player.getPlayerWinBalls()+1);
+
     }
+    
 }
